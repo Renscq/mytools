@@ -1,1 +1,25 @@
 # biotools
+Hands-on results are for entertainment only
+
+## usage of randseq.py
+```shell
+$ python randseq.py -n 2
+> seq1 
+ATACCGTATTGCTGTAGAACTGGCAACTTACCTACTGCCGGCCTCAAAGT
+> seq2 
+TCAACAAACGTGAGGTATACGTGATGCCGTCACTGCGGGAAGACCAACCG
+```
+
+```shell
+$ python randseq.py -t R -l 24
+> seq1 
+AUCCGGGGCCAGGCCACAAUCGUG
+> seq2 
+AACCCGUUAUGUCUGGUCAGCGGA
+> seq3 
+CCAUCCGGAUAGCUUUUUUCGGCA
+> seq4 
+UCCCUCAUAGGAUCGUCAAGGUCC
+> seq5 
+CGAAAGUCUCCCUAAGACGCCACG
+```

@@ -1,7 +1,8 @@
 # biotools
-Hands-on results are for entertainment only
+Hands-on results are for entertainment only.
 
 ## usage of randseq.py
+Generate some sequences randomly
 ```shell
 $ python randseq.py -n 2
 > seq1 
@@ -24,6 +25,7 @@ UCCCUCAUAGGAUCGUCAAGGUCC
 CGAAAGUCUCCCUAAGACGCCACG
 ```
 ## usage of fltReadsLength.py
+Filter reads of specific length in sequencing files.
 ```shell
 $ fltReadsLength -f sRNA.fa -m 20 -M 24 -o sRNA_20_24.fa
 $ head sRNA_20_24.fa -n 6

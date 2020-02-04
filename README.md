@@ -23,3 +23,14 @@ UCCCUCAUAGGAUCGUCAAGGUCC
 > seq5 
 CGAAAGUCUCCCUAAGACGCCACG
 ```
+## usage of fltReadsLength.py
+```shell
+$ fltReadsLength -f sRNA.fa -m 20 -M 24 -o sRNA_20_24.fa
+$ head sRNA_20_24.fa -n 6
+>t4500001
+gagaactttgaggactgaagt
+>t4500017
+gagaactttgaggccgaagc
+>t4500021
+gagaactttgagggccgaagt
+```

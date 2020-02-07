@@ -36,3 +36,18 @@ gagaactttgaggccgaagc
 >t4500021
 gagaactttgagggccgaagt
 ```
+## usage of getUniqFa.py
+Unique sRNA sequences file in fasta format.
+```shell
+$ getUniqFa -f sRNA.fa -l repeats.fa -u sRNA_uniq.fa
+$ head repeats.fa -n 4
+>hsa-mir-199a-1 | >hsa-mir-199b | >hsa-mir-199a-2
+acaguagucugcacauugguuu
+>hsa-mir-9-1 | >hsa-mir-9-2 | >hsa-mir-9-3
+auaaagcucgauaaccgaaagu
+$ head sRNA_uniq.fa -n 4
+>hsa-mir-199a-1
+acaguagucugcacauugguuu
+>hsa-mir-9-1
+auaaagcucgauaaccgaaagu
+```

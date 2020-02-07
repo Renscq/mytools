@@ -3,12 +3,12 @@
 
 import argparse, gc
 
-__version__ = "0.2"
 __author__ = "rensc"
+__mail__ = "rensc0718@163.com"
 
 # get arguments and dim the scripts usage
 def parse_args():
-    parser = argparse.ArgumentParser(description="filter the specific length of reads")
+    parser = argparse.ArgumentParser(description="filter the specific length of reads", epilog = 'version 0.1')
     
     infile = parser.add_mutually_exclusive_group(required=True)
     infile.add_argument('-f','--fa',action='store',help = 'sequence in fasta format')
@@ -42,13 +42,16 @@ def filterFa(srna,min,max,outfile):
             
             ids,rec = '',''
             for line in reads:
+                
                 if line.startswith('>'):
                     if min <= len(rec) <= max:
                         out.writelines(''.join([ids, '\n', rec, '\n']))
                         rec = ''
+                        
                     else:
                         rec = ''
                     ids = line.strip()
+                    
                 else:
                     rec = rec + line.strip()
 
@@ -76,12 +79,15 @@ def main():
     
     if args.fa:
         filterFa(args.fa, args.min, args.max, args.out)
+        
     elif args.fq:
         filterFq(args.fq, args.min, args.max, args.out)
+        
     elif args.txt:
         filterTxt(args.txt, args.min, args.max, args.out)
         
     gc.collect()
 
+    
 if __name__ == '__main__':
     main()

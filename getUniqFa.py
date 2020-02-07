@@ -4,6 +4,7 @@
 import argparse, gc, re
 
 __author__ = "rensc"
+__mail__ = "rensc0718@163.com"
 
 
 # get arguments and dim the scripts usage
@@ -94,6 +95,8 @@ def main():
 
     elif args.uniq:
         output_uniq(args.uniq, srna_uniq_dict)
+
+    gc.collect()
 
 
 # run here

@@ -28,6 +28,7 @@ CGAAAGUCUCCCUAAGACGCCACG
 Filter reads of specific length in sequencing files.
 ```shell
 $ fltReadsLength -f sRNA.fa -m 20 -M 24 -o sRNA_20_24.fa
+
 $ head sRNA_20_24.fa -n 6
 >t4500001
 gagaactttgaggactgaagt
@@ -40,11 +41,13 @@ gagaactttgagggccgaagt
 Unique sRNA sequences file in fasta format.
 ```shell
 $ getUniqFa -f sRNA.fa -l repeats.fa -u sRNA_uniq.fa
+
 $ head repeats.fa -n 4
 >hsa-mir-199a-1 | >hsa-mir-199b | >hsa-mir-199a-2
 acaguagucugcacauugguuu
 >hsa-mir-9-1 | >hsa-mir-9-2 | >hsa-mir-9-3
 auaaagcucgauaaccgaaagu
+
 $ head sRNA_uniq.fa -n 4
 >hsa-mir-199a-1
 acaguagucugcacauugguuu

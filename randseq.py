@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-#Ren Shuchao
-#rensc0718@163.com
+
+__author__ = "rensc"
+__mail__ = "rensc0718@163.com"
 
 import random, sys, getopt
 

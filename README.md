@@ -122,3 +122,41 @@ GCTAAGCTTCTATCGACCGCCT
 
 ```
 
+## corr_cds_region.py
+
+Use this scripts to remove the first 15 codons and last 5 codons of each isoforms CDS region. The output gtf file can be used for ribosome footprints quantification.
+
+```shell
+# get the gtf file
+$ gffread hsa.gff3 -T -o hsa.gtf
+
+# remove the specific length of CDS
+$ corr_cds_region -i hsa.gtf -u 15 -d 5 -o hsa.CDS.correct.gtf
+
+# ribosome footprints (RPFs) quantification
+featureCounts -T 6 -p -t CDS -g gene_id -a ~/reference/hsa.CDS.correct.gtf -o test1.cds.txt ../STAR/test1Aligned.sortedByCoord.out.bam
+```
+
+## calcTPM.py
+
+Convert the gene counts to RPKM / TPM
+
+```shell
+# input file of this script is the output file of featureCounts
+# test1.cds.txt 
+$ calcTPM -i test1.cds.txt -o test1.cds.tpm
+
+$ head test1.cds.tpm
+Gene_id	Chr	Start	End	Strand	Length	reads_count	RPM	RPKM	RPK	TPM
+gene1	I	1529	1945	-	417	94	8.212	19.694	225.42	17.533
+gene2	I	3431	3821	+	936	249	21.754	23.242	266.026	20.691
+gene3	I	9649	12188	+	3273	1042	91.035	27.814	318.362	24.762
+gene4	I	15975	16015	+	414	0	0.0	0.0	0.0	0.0
+gene5	I	17917	18362	+	1362	122	10.659	7.826	89.574	6.967
+gene6	I	36144	36503	+	2583	265	23.152	8.963	102.594	7.98
+gene7	I	40965	42587	-	1623	0	0.0	0.0	0.0	0.0
+gene8	I	43724	44506	-	783	0	0.0	0.0	0.0	0.0
+gene9	I	45584	45913	-	2055	672	58.71	28.569	327.007	25.435
+
+```
+

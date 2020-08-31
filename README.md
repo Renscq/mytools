@@ -122,7 +122,7 @@ GCTAAGCTTCTATCGACCGCCT
 
 ```
 
-## corr_cds_region.py
+## correct_cds_region.py
 
 Use this scripts to remove the first 15 codons and last 5 codons of each isoforms CDS region. The output gtf file can be used for ribosome footprints quantification.
 
@@ -131,7 +131,7 @@ Use this scripts to remove the first 15 codons and last 5 codons of each isoform
 $ gffread hsa.gff3 -T -o hsa.gtf
 
 # remove the specific length of CDS
-$ corr_cds_region -i hsa.gtf -u 15 -d 5 -o hsa.CDS.correct.gtf
+$ correct_cds_region -i hsa.gtf -u 10 -d 5 -o hsa.CDS.correct.gtf
 
 # ribosome footprints (RPFs) quantification
 featureCounts -T 6 -p -t CDS -g gene_id -a ~/reference/hsa.CDS.correct.gtf -o test1.cds.txt ../STAR/test1Aligned.sortedByCoord.out.bam
